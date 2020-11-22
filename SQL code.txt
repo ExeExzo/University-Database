@@ -1,0 +1,416 @@
+Student
+create table Student (
+	Stu_id INT,
+	f_name VARCHAR(50),
+	l_name VARCHAR(50),
+	IIN VARCHAR(50),
+	email VARCHAR(50),
+	tel_num VARCHAR(50),
+	Prof_id INT,
+	Num_course INT
+);
+Alter table Student
+ADD Primary key(Stu_id);
+-
+Alter table Student 
+ADD foreign key(Stu_id) references u_session(Stu_id);
+-
+Alter table Student 
+ADD foreign key(Prof_id) references Profession(Prof_id);
+-
+Select f_name, l_name, iin, Prof_name, group_name
+From Student
+inner join profession ON student.Prof_id = Profession.Prof_id
+inner join S_Group ON Profession.Group_id = S_Group.Group_id;
+-
+Select f_name, l_name, Prof_id
+From Student
+Where Prof_id between 106 and 108;
+-
+Select max(Student.Prof_id) as maximum
+From Student;
+inner join profession ON student.Prof_id = Profession.Prof_id
+inner join S_Group ON Profession.Group_id = S_Group.Group_id;
+
+inner join profession ON student.Prof_id = Profession.Prof_id
+inner join S_Group ON Profession.Group_id = S_Group.Group_id;
+Update Student
+Set Num_course = 2
+Where Prof_id = 106; 
+-
+select Prof_id
+From Student
+Where Num_course = 2;
+-
+insert into Student (Stu_id, f_name, l_name, IIN, email, tel_num, Prof_id, Num_course) 
+values (1101, 'Maura', 'Ceaser', '772826491', 'mceaser0@g.com', '+7-(843)-816-1137', 101, 1),
+(1102, 'Edsel', 'Bullimore', '853233846', 'ebullimore1@hud.gov', '+3-(159)-444-8325', 101, 1),
+(1103, 'Flynn', 'Sherburn', '556140223', 'fsherburn2@imdb.com', '+3-(534)-393-2413', 101, 1),
+(1104, 'Traver', 'Olennikov', '137939429', 'tolennikov3@weebly.com', '+6-(739)-699-2810', 101, 1),
+(1105, 'Guthrey', 'Hursthouse', '442755736', 'ghursthouse4@barnesandnoble.com', '+3-(109)-372-3676', 101, 1),
+(1106, 'Wynnie', 'Mulholland', '817629051', 'wmulholland5@examiner.com', '+8-(735)-919-1441', 101, 1),
+(1107, 'Onofredo', 'Densey', '147687656', 'odensey6@elegantthemes.com', '+1-(845)-389-8934', 101, 1),
+(1108, 'Mick', 'Kay', '906413127', 'mkay7@nationalgeographic.com', '+4-(646)-454-1793', 101, 1),
+(1109, 'Amaleta', 'Kemmett', '990513206', 'akemmett8@t.co', '+4-(277)-284-6180', 101, 1),
+(1110, 'Delano', 'Bohlmann', '213705989', 'dbohlmann9@barnesandnoble.com', '+8-(564)-376-3653', 101, 1),
+(1111, 'Faunie', 'Blissett', '238625244', 'fblissetta@smh.com.au', '+8-(663)-262-0243', 102, 1),
+(1112, 'Oralla', 'Hackworthy', '073325952', 'ohackworthyb@4shared.com', '+4-(921)-321-3761', 102, 1),
+(1113, 'Drucill', 'Tesh', '550981133', 'dteshc@w3.org', '+4-(146)-914-2420', 102, 1),
+(1114, 'Melania', 'Cowterd', '715988807', 'mcowterdd@ca.gov', '+1-(290)-393-7791', 102, 1),
+(1115, 'Lorianne', 'Heeks', '977360842', 'lheekse@nhs.uk', '+3-(838)-334-1866', 102, 1),
+(1116, 'Nikos', 'Arlott', '867569894', 'narlottf@gov.uk', '+4-(541)-548-5813', 102, 1),
+(1117, 'Kevyn', 'Lydon', '264279605', 'klydong@time.com', '+2-(491)-181-6080', 102, 1),
+(1118, 'Cahra', 'Kimbury', '207895399', 'ckimburyh@gov.uk', '+3-(305)-809-1109', 102, 1),
+(1119, 'Inga', 'Domenget', '187818636', 'idomengeti@qq.com', '+5-(779)-119-3187', 102, 1),
+(1120, 'Burl', 'Guerry', '890502684', 'bguerryj@booking.com', '+9-(700)-722-0740', 102, 1),
+(1121, 'Jobi', 'Mahon', '136695959', 'jmahonk@gnu.org', '+9-(941)-618-3184', 103, 1),
+(1122, 'Shelton', 'Breheny', '396055615', 'sbrehenyl@purevolume.com', '+6-(889)-736-0773', 103, 1),
+(1123, 'Aleta', 'Burrows', '326202443', 'aburrowsm@ihg.com', '+9-(736)-754-0297', 103, 1),
+(1124, 'Coraline', 'De Domenici', '34-3070507', 'cdedomenicin@prnewswire.com', '+8-(591)-609-1895', 103, 1),
+(1125, 'Consalve', 'Cariss', '908442125', 'ccarisso@spotify.com', '+1-(540)-860-2157', 103, 1),
+(1126, 'Isobel', 'Phalip', '846046049', 'iphalipp@addtoany.com', '+8-(840)-962-6836', 103, 1),
+(1127, 'Reggis', 'Durker', '668595711', 'rdurkerq@hostgator.com', '+6-(807)-602-9181', 103, 1),
+(1128, 'Nannie', 'Wagerfield', '015730189', 'nwagerfieldr@friendfeed.com', '+6-(966)-463-1880', 103, 1),
+(1129, 'Ryann', 'Udall', '351123213', 'rudalls@t.co', '+4-(618)-807-1073', 103, 1),
+(1130, 'Connie', 'Bantock', '643282964', 'cbantockt@multiply.com', '+8-(222)-239-4943', 103, 1),
+(1131, 'Marianna', 'Cauldwell', '063370390', 'mcauldwellu@vinaora.com', '+1-(184)-122-9925', 104, 1),
+(1132, 'Berk', 'O''Curneen', '495979139', 'bocurneenv@arizona.edu', '+3-(797)-718-4345', 104, 1),
+(1133, 'Delmor', 'Roger', '713764097', 'drogerw@hibu.com', '+6-(260)-976-0103', 104, 1),
+(1134, 'Artur', 'Toke', '282088600', 'atokex@unesco.org', '+6-(283)-645-1943', 104, 1),
+(1135, 'Lorne', 'Edwins', '668804480', 'ledwinsy@yolasite.com', '+7-(182)-192-3212', 104, 1),
+(1136, 'Peyter', 'Hasselby', '360279126', 'phasselbyz@dropbox.com', '+3-(131)-288-0942', 104, 1),
+(1137, 'Aviva', 'Ladley', '642168108', 'aladley10@independent.co.uk', '+3-(570)-867-3929', 104, 1),
+(1138, 'Von', 'Theuff', '571010619', 'vtheuff11@chronoengine.com', '+6-(131)-749-3471', 104, 1),
+(1139, 'Cullin', 'Bretherton', '400164043', 'cbretherton12@tamu.edu', '+8-(531)-120-5335', 104, 1),
+(1140, 'Lionel', 'Portress', '532798286', 'lportress13@about.me', '+3-(832)-575-7993', 104, 1),
+(1141, 'Cesar', 'Maplesden', '769947653', 'cmaplesden14@t.co', '+8-(331)-936-3863', 105, 1),
+(1142, 'Stanwood', 'Prince', '519286885', 'sprince15@freewebs.com', '+8-(363)-898-2905', 105, 1),
+(1143, 'Ogdan', 'Follett', '472822868', 'ofollett16@sfgate.com', '+4-(575)-389-1952', 105, 1),
+(1144, 'Caty', 'Alven', '599990768', 'calven17@howstuffworks.com', '+6-(946)-563-4532', 105, 1),
+(1145, 'Kendra', 'Rawes', '004068158', 'krawes18@elpais.com', '+2-(276)-162-3385', 105, 1),
+(1146, 'Kordula', 'Howton', '120763571', 'khowton19@boston.com', '+5-(522)-250-7104', 105, 1),
+(1147, 'Laina', 'Pudge', '275215746', 'lpudge1a@stanford.edu', '+5-(932)-105-8488', 105, 1),
+(1148, 'Perkin', 'McClintock', '326790657', 'pmcclintock1b@shop-pro.jp', '+7-(357)-619-3473', 105, 1),
+(1149, 'Donnajean', 'Kamiyama', '805282813', 'dkamiyama1c@about.com', '+2-(678)-228-5400', 105, 1),
+(1150, 'Yetty', 'Fowles', '823855328', 'yfowles1d@w3.org', '+6-(917)-398-1079', 105, 1),
+(1151, 'Iona', 'Lacotte', '545706224', 'ilacotte1e@mozilla.org', '+6-(846)-493-9012', 106, 1),
+(1152, 'Dorisa', 'Dallicott', '522700593', 'ddallicott1f@tripod.com', '+7-(616)-569-1843', 106, 1),
+(1153, 'Jess', 'Ferrant', '778209479', 'jferrant1g@wufoo.com', '+2-(672)-324-1812', 106, 1),
+(1154, 'Letta', 'Lovat', '805784566', 'llovat1h@tumblr.com', '+6-(734)-636-8547', 106, 1),
+(1155, 'Amanda', 'Hainey', '421244436', 'ahainey1i@comsenz.com', '+5-(265)-541-8363', 106, 1),
+(1156, 'Rosalinde', 'Hillam', '304744648', 'rhillam1j@skyrock.com', '+5-(491)-697-6747', 106, 1),
+(1157, 'Carmon', 'Tooting', '135455438', 'ctooting1k@slideshare.net', '+6-(590)-467-3360', 106, 1),
+(1158, 'Marget', 'Capenor', '273294087', 'mcapenor1l@huffingtonpost.com', '+8-(295)-650-5913', 106, 1),
+(1159, 'Odella', 'Ivell', '443137173', 'oivell1m@vinaora.com', '+6-(734)-548-9839', 106, 1),
+(1160, 'Hadley', 'Quodling', '111889727', 'hquodling1n@ask.com', '+5-(145)-705-1816', 106, 1),
+(1161, 'Issi', 'Yardley', '786132559', 'iyardley1o@wufoo.com', '+2-(615)-382-9089', 107, 1),
+(1162, 'Rollins', 'Birkenshaw', '751764651', 'rbirkenshaw1p@amazonaws.com', '+3-(997)-345-5909', 107, 1),
+(1163, 'Junina', 'Mingaye', '537006532', 'jmingaye1q@umich.edu', '+8-(263)-546-7776', 107, 1),
+(1164, 'Paten', 'Kleinplatz', '810498625', 'pkleinplatz1r@businessweek.com', '+8-(611)-478-8571', 107, 1),
+(1165, 'Karen', 'Odams', '472885070', 'kodams1s@wp.com', '+1-(520)-622-2112', 107, 1),
+(1166, 'Andy', 'Hubble', '784543317', 'ahubble1t@usda.gov', '+5-(983)-968-9498', 107, 1),
+(1167, 'Kaitlin', 'Symones', '268605557', 'ksymones1u@cocolog-nifty.com', '+8-(992)-967-3845', 107, 1),
+(1168, 'Justinian', 'Petett', '097328472', 'jpetett1v@shinystat.com', '+3-(782)-962-2765', 107, 1),
+(1169, 'Ardith', 'Peyes', '864315606', 'apeyes1w@gnu.org', '+6-(780)-293-6125', 107, 1),
+(1170, 'Joby', 'Antonchik', '641950165', 'jantonchik1x@tinyurl.com', '+6-(618)-892-4679', 107, 1),
+(1171, 'Mireille', 'Carncross', '665133034', 'mcarncross1y@pbs.org', '+8-(806)-431-9979', 108, 1),
+(1172, 'Jordan', 'Bryan', '386182218', 'jbryan1z@geocities.com', '+1-(644)-842-3150', 108, 1),
+(1173, 'Gil', 'Mayhead', '538680793', 'gmayhead20@themeforest.net', '+9-(656)-412-1818', 108, 1),
+(1174, 'Torrence', 'Malin', '676776334', 'tmalin21@studiopress.com', '+5-(396)-519-2999', 108, 1),
+(1175, 'Sergent', 'Jaskowicz', '591811106', 'sjaskowicz22@4shared.com', '+6-(939)-991-6992', 108, 1),
+(1176, 'Beauregard', 'Davson', '621972155', 'bdavson23@imageshack.us', '+8-(771)-396-3627', 108, 1),
+(1177, 'Louis', 'Du Pre', '608852391', 'ldupre24@last.fm', '+4-(281)-196-1466', 108, 1),
+(1178, 'Tomkin', 'Balnaves', '776341647', 'tbalnaves25@ning.com', '+4-(413)-106-5278', 108, 1),
+(1179, 'Audrey', 'Glassup', '264485363', 'aglassup26@a8.net', '+3-(413)-349-1177', 108, 1),
+(1180, 'Violetta', 'Sutheran', '917794438', 'vsutheran27@cam.ac.uk', '+3-(604)-690-6874', 108, 1),
+(1181, 'Nari', 'Statersfield', '184029300', 'nstatersfield28@reference.com', '+3-(701)-624-0998', 109, 1),
+(1182, 'Dimitri', 'Sallenger', '589380803', 'dsallenger29@elegantthemes.com', '+4-(396)-565-0555', 109, 1),
+(1183, 'Tamas', 'Medlen', '710016288', 'tmedlen2a@va.gov', '+9-(620)-685-8879', 109, 1),
+(1184, 'Si', 'Abbotts', '975272603', 'sabbotts2b@hud.gov', '+8-(233)-501-3028', 109, 1),
+(1185, 'Emmet', 'Arsmith', '222303026', 'earsmith2c@intel.com', '+8-(663)-123-5257', 109, 1),
+(1186, 'Elli', 'Gauge', '045509613', 'egauge2d@google.ca', '+1-(907)-560-9084', 109, 1),
+(1187, 'Aviva', 'Mc Elory', '424442014', 'amcelory2e@reddit.com', '+5-(531)-981-4907', 109, 1),
+(1188, 'Nikolaus', 'Guiot', '599952805', 'nguiot2f@fc2.com', '+4-(318)-677-9104', 109, 1),
+(1189, 'Violante', 'Chesterfield', '130764173', 'vchesterfield2g@yahoo.com', '+2-(582)-544-5210', 109, 1),
+(1190, 'Skipton', 'Taffs', '276752959', 'staffs2h@ocn.ne.jp', '+3-(874)-864-8320', 109, 1),
+(1191, 'Russell', 'Challice', '869466392', 'rchallice2i@posterous.com', '+1-(460)-753-2767', 110, 1),
+(1192, 'Truda', 'Belchem', '666676968', 'gani@gainelov.com', '+8-(708)-590-0188', 110, 1),
+(1193, 'Gani', 'Gainelov', '767533405', 'tbelchem2j@businesswire.com', '+8-(997)-640-2337', 110, 1),
+(1194, 'Nicol', 'Tring', '095189443', 'ntring2l@icio.us', '+2-(402)-850-9327', 110, 1),
+(1195, 'Christy', 'Walas', '200245750', 'cwalas2m@ocn.ne.jp', '+3-(641)-610-4491', 110, 1),
+(1196, 'Josefina', 'Fraschetti', '577680528', 'jfraschetti2n@about.com', '+6-(656)-649-9133', 110, 1),
+(1197, 'Elvina', 'Cours', '251561924', 'ecours2o@springer.com', '+7-(913)-779-9557', 110, 1),
+(1198, 'Judd', 'Benoy', '545407773', 'jbenoy2p@friendfeed.com', '+5-(725)-659-8902', 110, 1),
+(1199, 'Corilla', 'Meriot', '190235458', 'cmeriot2q@netscape.com', '+4-(263)-544-6775', 110, 1),
+(1200, 'Tore', 'Melville', '615087749', 'tmelville2r@unesco.org', '+1-(325)-232-4676', 110, 1);
+Select*from Student;
+Group
+create table S_Group(
+	Group_id INT,
+	Group_name VARCHAR(50)
+);
+Alter table S_Group
+ADD primary key(Group_id);
+-
+Alter table S_Group 
+ADD foreign key(Group_id) references Lesson(Group_id);
+-
+insert into S_group (Group_id, Group_name) 
+values (2001, 'SE'),
+(2002, 'BD'),
+(2003, 'CS'),
+(2004, 'IA'),
+(2005, 'MT'),
+(2006, 'CS'),
+(2007, 'TS'),
+(2008, 'ITM'),
+(2009, 'SS'),
+(2010, 'DJ');
+Select * from S_Group;
+Profession
+create table Profession (
+	Prof_id INT,
+	Prof_name VARCHAR(50),
+	Group_id INT,
+	Facu_id INT
+);
+Alter table Profession
+ADD Primary key(Prof_id);
+-
+Alter table Profession
+ADD foreign key(Facu_id) references Faculty(Facu_id);
+Alter table Profession 
+ADD Foreign key(Group_id) references S_group(Group_id);
+-
+Delete from Profession
+	Where Prof_id = 106;
+Update Profession
+Set Facu_id=607103
+Where Prof_id=106;
+-
+insert into Profession (Prof_id, Facu_id, group_id, Prof_name) 
+values (101, 606102, 2001, 'Software Engineering'),
+(102, 606102, 2002, 'Big Data'),
+(103, 606102, 2003, 'Computer Science'),
+(104, 606102, 2004, 'Industrial Automation'),
+(105, 606102, 2005, 'Media Technologies'),
+(106, 606102, 2006, 'Cibersecurity'),
+(107, 606102, 2007, 'Telecommunication systems '),
+(108, 606102, 2008, 'IT Management'),
+(109, 606102, 2009, 'Support specialist'),
+(110, 606102, 2010, 'Digital Journalism');
+Select * from Profession;
+Lesson
+Create table Lesson(
+Group_id INT,
+Sub_id INT
+);
+Alter table Lesson
+ADD primary key(Group_id);
+-
+Alter table Lesson
+ADD Foreign key (Sub_id) references Subject(Sub_id);
+-
+Alter table Lesson
+ADD column Trimester varchar(32);
+-
+Insert into Lesson(Group_id, Sub_id)
+values(2001, 11822188),
+(2002, 66151754),
+(2003, 10812602),
+(2004, 76237152),
+(2005, 68703092),
+(2006, 53304030),
+(2007, 48616548),
+(2008, 60891213),
+(2009, 18056065),
+(2010, 21981305);
+Select * from lesson;
+
+Update Lesson
+Set Trimester = 'Second'
+Where Group_id = 2002;
+Update Lesson
+set trimester= 'First'
+where Group_id between 2003 and 2010;
+Subject
+create table Subject (
+	Sub_id INT,
+	Sub_name VARCHAR(50),
+	Sub_teach_id INT,
+	Trimester VARCHAR(50)
+);
+Alter table SubjectS
+ADD Primary key(Sub_id);
+-
+Alter table Subject
+ADD foreign key(Sub_teach_id) references Teacher(Teacher_id);
+-
+insert into Subject (Sub_id, Sub_name, Sub_teach_id, Trimester) 
+values (11822188, 'ITP C++', 11822101, 'First'),
+(66151754	, 'ICT', 66151101, 'First'),
+(10812602	, 'Calculus', 10812101, 'First'),
+(76237152	, 'Eng', 76237101, 'First'),
+(68703092	, 'PhC', 68703101, 'First'),
+(53304030	, 'Cultural studies', 53304101, 'First'),
+(48616548	, 'Discrete Mathematics', 48616101, 'First'),
+(60891213	, 'Modern History of Kazakhstan', 60891101, 'First'),
+(18056065	, 'Web Technologies', 18056101, 'First'),
+(21981305	, 'Computer Graphics', 21981101, 'First');
+Select * from Subject;
+Alter table Subject
+Drop column Trimester;
+Teacher
+Create table Teacher(
+Teacher_id INT,
+Teach_name Varchar(50),
+Salary Varchar(50)
+);
+Alter table Teacher
+ADD Primary key(Teacher_id);
+-
+insert into Teacher (Teacher_id, Teach_name, Salary) 
+values (11822101, 'Wanids Brocklebank', '367000'),
+(66151101, 'Diego Grayston', '596000'),
+(10812101, 'Bettine Zanelli', '479000'),
+(76237101, 'Fanya Berrow', '435000'),
+(68703101, 'Giselbert Snare', '557000'),
+(53304101, 'Banky Hazlewood', '452000'),
+(48616101, 'Ora Walne', '290000'),
+(60891101, 'Martyn Huband', '530000'),
+(18056101, 'Kennan Blampey', '505000'),
+(21981101, 'Josy Ullock', '440000');
+select * from Teacher;
+U_session
+Create table U_Session(
+Stu_id INT,
+Trimester VARCHAR(50),
+Estimation_ses VARCHAR(50),
+Session_date date,
+Sub_id INT
+);
+Alter table u_session
+ADD primary key(Stu_id);
+-
+alter table u_session
+ADD PRimary key(Stu_id);
+-
+Alter table U_Session
+ADD Foreign key(Sub_id) references Subject(Sub_id);
+-
+Insert into U_session(Stu_id, Trimester, Sub_id, Estimation_ses, Session_date)
+values (1101, 'First', 11822188, '68%', '23-11-2020'),
+(1102, 'First', 66151754, '82%', '23-11-2020'),
+(1103, 'First', 10812602, '43%', '23-11-2020'),
+(1104, 'First', 11822188, '34%', '23-11-2020'),
+(1105, 'First', 66151754, '67%', '23-11-2020'),
+(1106, 'First', 10812602, '49%', '23-11-2020'),
+(1107, 'First', 11822188, '72%', '23-11-2020'),
+(1108, 'First', 66151754, '90%', '23-11-2020'),
+(1109, 'First', 10812602, '33%', '23-11-2020'),
+(1110, 'First', 11822188, '72%', '23-11-2020'),
+(1111, 'First', 48616548, '78%', '28-11-2020'),
+(1112, 'First', 60891213, '55%', '28-11-2020'),
+(1113, 'First', 11822188, '57%', '28-11-2020'),
+(1114, 'First', 48616548, '43%', '28-11-2020'),
+(1115, 'First', 60891213, '98%', '28-11-2020'),
+(1116, 'First', 11822188, '93%', '28-11-2020'),
+(1117, 'First', 48616548, '86%', '28-11-2020'),
+(1118, 'First', 60891213, '38%', '28-11-2020'),
+(1119, 'First', 11822188, '30%', '28-11-2020'),
+(1120, 'First', 48616548, '89%', '28-11-2020'),
+(1121, 'First', 18056065, '97%', '25-11-2020'),
+(1122, 'First', 21981305, '41%', '25-11-2020'),
+(1123, 'First', 60891213, '31%', '25-11-2020'),
+(1124, 'First', 18056065, '50%', '25-11-2020'),
+(1125, 'First', 21981305, '82%', '25-11-2020'),
+(1126, 'First', 60891213, '78%', '25-11-2020'),
+(1127, 'First', 18056065, '33%', '25-11-2020'),
+(1128, 'First', 21981305, '80%', '25-11-2020'),
+(1129, 'First', 60891213, '39%', '25-11-2020'),
+(1130, 'First', 18056065, '35%', '25-11-2020'),
+(1131, 'First', 11822188, '39%', '29-11-2020'),
+(1132, 'First', 76237152, '78%', '29-11-2020'),
+(1133, 'First', 53304030, '69%', '29-11-2020'),
+(1134, 'First', 11822188, '84%', '29-11-2020'),
+(1135, 'First', 76237152, '37%', '29-11-2020'),
+(1136, 'First', 53304030, '43%', '29-11-2020'),
+(1137, 'First', 11822188, '57%', '29-11-2020'),
+(1138, 'First', 76237152, '82%', '29-11-2020'),
+(1139, 'First', 53304030, '49%', '29-11-2020'),
+(1140, 'First', 11822188, '99%', '29-11-2020'),
+(1141, 'First', 48616548, '74%', '02-12-2020'),
+(1142, 'First', 68703092, '98%', '02-12-2020'),
+(1143, 'First', 21981305, '85%', '02-12-2020'),
+(1144, 'First', 48616548, '43%', '02-12-2020'),
+(1145, 'First', 68703092, '82%', '02-12-2020'),
+(1146, 'First', 21981305, '56%', '02-12-2020'),
+(1147, 'First', 48616548, '67%', '02-12-2020'),
+(1148, 'First', 68703092, '91%', '02-12-2020'),
+(1149, 'First', 21981305, '87%', '02-12-2020'),
+(1150, 'First', 48616548, '74%', '02-12-2020'),
+(1151, 'First', 66151754, '57%', '27-11-2020'),
+(1152, 'First', 10812602, '84%', '27-11-2020'),
+(1153, 'First', 60891213, '73%', '27-11-2020'),
+(1154, 'First', 66151754, '81%', '27-11-2020'),
+(1155, 'First', 10812602, '84%', '27-11-2020'),
+(1156, 'First', 60891213, '63%', '27-11-2020'),
+(1157, 'First', 66151754, '87%', '27-11-2020'),
+(1158, 'First', 10812602, '65%', '27-11-2020'),
+(1159, 'First', 60891213, '85%', '27-11-2020'),
+(1160, 'First', 66151754, '76%', '27-11-2020'),
+(1161, 'First', 48616548, '93%', '26-11-2020'),
+(1162, 'First', 18056065, '78%', '26-11-2020'),
+(1163, 'First', 76237152, '86%', '26-11-2020'),
+(1164, 'First', 48616548, '64%', '26-11-2020'),
+(1165, 'First', 18056065, '56%', '26-11-2020'),
+(1166, 'First', 76237152, '72%', '26-11-2020'),
+(1167, 'First', 48616548, '69%', '26-11-2020'),
+(1168, 'First', 18056065, '62%', '26-11-2020'),
+(1169, 'First', 76237152, '82%', '26-11-2020'),
+(1170, 'First', 48616548, '56%', '26-11-2020'),
+(1171, 'First', 11822188, '49%', '04-12-2020'),
+(1172, 'First', 10812602, '64%', '04-12-2020'),
+(1173, 'First', 68703092, '79%', '04-12-2020'),
+(1174, 'First', 11822188, '88%', '04-12-2020'),
+(1175, 'First', 10812602, '68%', '04-12-2020'),
+(1176, 'First', 68703092, '62%', '04-12-2020'),
+(1177, 'First', 11822188, '71%', '04-12-2020'),
+(1178, 'First', 10812602, '80%', '04-12-2020'),
+(1179, 'First', 68703092, '83%', '04-12-2020'),
+(1180, 'First', 11822188, '81%', '04-12-2020'),
+(1181, 'First', 18056065, '87%', '24-11-2020'),
+(1182, 'First', 21981305, '96%', '24-11-2020'),
+(1183, 'First', 53304030, '76%', '24-11-2020'),
+(1184, 'First', 18056065, '53%', '24-11-2020'),
+(1185, 'First', 21981305, '72%', '24-11-2020'),
+(1186, 'First', 53304030, '90%', '24-11-2020'),
+(1187, 'First', 18056065, '65%', '24-11-2020'),
+(1188, 'First', 21981305, '67%', '24-11-2020'),
+(1189, 'First', 53304030, '78%', '24-11-2020'),
+(1190, 'First', 18056065, '47%', '24-11-2020'),
+(1191, 'First', 66151754, '62%', '01-12-2020'),
+(1192, 'First', 60891213, '63%', '01-12-2020'),
+(1193, 'First', 18056065, '74%', '01-12-2020'),
+(1194, 'First', 66151754, '77%', '01-12-2020'),
+(1195, 'First', 60891213, '85%', '01-12-2020'),
+(1196, 'First', 18056065, '57%', '01-12-2020'),
+(1197, 'First', 66151754, '89%', '01-12-2020'),
+(1198, 'First', 60891213, '75%', '01-12-2020'),
+(1199, 'First', 18056065, '88%', '01-12-2020'),
+(1200, 'First', 66151754, '73%', '01-12-2020');
+Select * from U_session;
+Faculty
+create table Faculty (
+	Facu_id INT,
+	Facu_name VARCHAR(50),
+	Dean VARCHAR(50),
+	Facu_tel_num VARCHAR(50)
+);
+Alter table Faculty
+ADD Primary key(Facu_id);
+insert into Faculty (Facu_id, Facu_name, Dean, Facu_tel_num) 
+values (606102, 'Information Technology', 'Wayland Brouncker', '+8-834-706-3054');
+insert into Faculty (Facu_id, Facu_name, Dean, Facu_tel_num) 
+values (607103, 'Security', 'Lemar Lante', '+8-795-769-5900');
+Select * from Faculty;
